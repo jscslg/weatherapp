@@ -8,7 +8,8 @@ import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.http.GET
 import retrofit2.http.Query
 
-private const val APP_ID = "d0a8ebf582d4c9a96af451d526774597"
+//ADD AN API KEY HERE FROM WEATHER API
+private const val APP_ID = "paste_here"
 private const val BASE_URL = "https://api.openweathermap.org"
 private val retrofit = Retrofit.Builder()
     .addConverterFactory(GsonConverterFactory.create())

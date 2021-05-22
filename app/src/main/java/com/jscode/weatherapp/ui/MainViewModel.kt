@@ -47,7 +47,7 @@ class MainViewModel(private val repo: Repository) : ViewModel() {
             emit(Resource.Success(repo.getCities()))
         } catch (e: Exception) {
             Log.e(TAG, e.message.toString())
-            _snack.postValue(e.message ?: "Something Went Wrong")
+            _snack.postValue("Something Went Wrong")
             emit(Resource.Error<List<CityData>>(e))
         }
     }
@@ -81,7 +81,12 @@ class MainViewModel(private val repo: Repository) : ViewModel() {
             _navigateBack.postValue(true)
         } catch (e: Exception) {
             Log.e(TAG, e.message.toString())
-            _snack.postValue(e.message ?: "Something Went Wrong")
+            val message = when(e.message.toString().trim()){
+                "Index: 0, Size: 0" -> "City Not Found"
+                "HTTP 401 Unauthorized" -> "API access key is invalid"
+                else -> "Something Went Wrong"
+            }
+            _snack.postValue(message)
         }
     }
 
@@ -90,7 +95,7 @@ class MainViewModel(private val repo: Repository) : ViewModel() {
             repo.deleteCity(name)
         } catch (e: Exception) {
             Log.e(TAG, e.message.toString())
-            _snack.postValue(e.message ?: "Something Went Wrong")
+            _snack.postValue("Something Went Wrong")
         }
     }
 
