@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+        <variable
+            name="item"
+            type="com.jscode.weatherapp.models.CityData" />
+        <variable
+            name="onClickHandler"
+            type="com.jscode.weatherapp.adapters.CitiesAdapter.Companion.CityOnClick" />
+    </data>
+
+    <com.google.android.material.card.MaterialCardView
+        android:onClick="@{()->onClickHandler.onClickCity(item)}"
+        style="@style/Card">
+        <com.google.android.material.textview.MaterialTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@{item.name}"
+            style="@style/HeaderText" />
+
+    </com.google.android.material.card.MaterialCardView>
+</layout>

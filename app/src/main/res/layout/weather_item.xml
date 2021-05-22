@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="item"
+            type="com.jscode.weatherapp.models.WeatherData" />
+    </data>
+
+    <com.google.android.material.card.MaterialCardView style="@style/Card">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/date_text"
+                style="@style/BodyText"
+                formatDateText="@{item.date}"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                app:layout_constraintTop_toTopOf="parent"
+                android:textSize="16sp"/>
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/min_temp_text"
+                style="@style/BodyText"
+                formatMinTemp="@{item.minTemp}"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/date_text" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/max_temp_text"
+                style="@style/BodyText"
+                formatMaxTemp="@{item.maxTemp}"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/date_text"
+                />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/main_text"
+                style="@style/BodyText"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@{item.main}"
+                app:layout_constraintEnd_toStartOf="@id/icon"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/max_temp_text"
+                android:textStyle="bold|italic"/>
+
+            <com.google.android.material.textview.MaterialTextView
+                style="@style/BodyText"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@{item.desc}"
+                app:layout_constraintEnd_toStartOf="@id/icon"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/main_text"
+                android:textStyle="bold|italic"/>
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/icon"
+                iconUrl="@{item.icon}"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/max_temp_text"
+                style="@style/Icon" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.card.MaterialCardView>
+</layout>
