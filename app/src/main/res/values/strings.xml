@@ -3,4 +3,8 @@
     <string name="add">ADD</string>
     <string name="city_name">City Name</string>
     <string name="delete">delete</string>
+    <string name="contact">Contact Us</string>
+    <string name="developer_name">Jatin Singh Chug</string>
+    <string name="developer">Developer</string>
+    <string name="dev_email">jscslg27@gmail.com</string>
 </resources>

@@ -32,6 +32,10 @@ class HomeFragment : Fragment() {
             view?.findNavController()?.navigate(R.id.action_homeFragment_to_addFragment)
             true
         }
+        R.id.action_contact -> {
+            view?.findNavController()?.navigate(R.id.action_homeFragment_to_contactFragment)
+            true
+        }
         else -> super.onOptionsItemSelected(item)
     }
 

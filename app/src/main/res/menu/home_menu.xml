@@ -2,8 +2,14 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
+        android:id="@+id/action_contact"
+        android:icon="@drawable/outline_contact_support_black_36dp"
+        app:showAsAction="ifRoom"
+        android:title="@string/contact" />
+    <item
         android:id="@+id/action_add"
         android:icon="@drawable/outline_add_black_36dp"
         app:showAsAction="ifRoom"
         android:title="@string/add" />
+
 </menu>

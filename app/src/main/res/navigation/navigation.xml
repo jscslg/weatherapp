@@ -14,6 +14,9 @@
         <action
             android:id="@+id/action_homeFragment_to_addFragment"
             app:destination="@id/addFragment"/>
+        <action
+            android:id="@+id/action_homeFragment_to_contactFragment"
+            app:destination="@id/contactFragment" />
     </fragment>
     <fragment
         android:id="@+id/weatherFragment"
@@ -27,4 +30,8 @@
         android:id="@+id/addFragment"
         android:name="com.jscode.weatherapp.ui.AddFragment"
         android:label="AddFragment" />
+    <fragment
+        android:id="@+id/contactFragment"
+        android:name="com.jscode.weatherapp.ui.ContactFragment"
+        android:label="ContactFragment" />
 </navigation>
